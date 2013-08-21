@@ -14,7 +14,7 @@ The script creates a file called `screenie.png` that is being deleted once uploa
 
 ## Configuration ##
 
-You need to create the file `config\_craigshot.py` with the following variables
+You need to create the file `config_craigshot.py` with the following variables
 
 ```
 BLOG='yourblog.tumblr.com'
