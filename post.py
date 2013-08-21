@@ -30,7 +30,7 @@ display.stop()
 print "Done!"
 print "Now posting to craigshot.tumblr.com ..."
 
-api = TumblrAPIv2(CONSUMER_KEY, CONSUMER_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
+api = TumblrAPIv2( config_craigshot.CONSUMER_KEY, config_craigshot.CONSUMER_SECRET, config_craigshot.OAUTH_TOKEN, config_craigshot.OAUTH_TOKEN_SECRET)
 
 date  = time.gmtime(os.path.getmtime('./screenie.png'))
 post = {
@@ -42,7 +42,7 @@ post = {
 }
 
 try:
-    response = api.createPhotoPost(BLOG,post)
+    response = api.createPhotoPost(config_craigshot.BLOG,post)
     if 'id' in response:
         print response['id']
         os.remove('./screenie.png')
