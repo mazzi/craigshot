@@ -16,7 +16,6 @@ The script creates a file called `screenie.png` that is being deleted once uploa
 
 You need to create the file `config.ini` (a copy of config_sample.ini)
 
-```
 Where:
 - `CONSUMER` values can be filled in using http://www.tumblr.com/oauth/apps
 - `OAUTH` values can be filled in using https://gist.github.com/velocityzen/1242662
