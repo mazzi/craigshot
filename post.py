@@ -9,11 +9,11 @@ import sys
 import config_craigshot
 
 # keys in your config_craigshot.py file @TODO write a conf.ini file.
-BLOG=''
-CONSUMER_KEY = ''
-CONSUMER_SECRET = ''
-OAUTH_TOKEN = ''
-OAUTH_TOKEN_SECRET = ''
+#BLOG=''
+#CONSUMER_KEY = ''
+#CONSUMER_SECRET = ''
+#OAUTH_TOKEN = ''
+#OAUTH_TOKEN_SECRET = ''
 # Keys in http://www.tumblr.com/oauth/apps
 
 print "Taking screenshot ..."
