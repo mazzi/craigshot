@@ -6,18 +6,14 @@ from photo2tumblr import TumblrAPIv2, APIError
 import time
 import os
 import sys
-import config_craigshot
+import configparser
 
-# keys in your config_craigshot.py file @TODO write a conf.ini file.
-#BLOG=''
-#CONSUMER_KEY = ''
-#CONSUMER_SECRET = ''
-#OAUTH_TOKEN = ''
-#OAUTH_TOKEN_SECRET = ''
 # Keys in http://www.tumblr.com/oauth/apps
+config = configparser.Configparser()
+config.read('config.ini')
 
 print "Taking screenshot ..."
-display = Display(visible=0, size=(800, 600))
+display = Display(visible=0, size=(config['SCREEN']['WIDTH'], config['SCREEN']['HEIGHT']))
 display.start()
 
 browser = webdriver.Firefox()
@@ -28,9 +24,12 @@ browser.quit()
 display.stop()
 
 print "Done!"
-print "Now posting to %s ..." % config_craigshot.BLOG
+print "Now posting to %s ..." % config['DEFAULT']['BLOG']
 
-api = TumblrAPIv2( config_craigshot.CONSUMER_KEY, config_craigshot.CONSUMER_SECRET, config_craigshot.OAUTH_TOKEN, config_craigshot.OAUTH_TOKEN_SECRET)
+api = TumblrAPIv2(  config['DEFAULT']['CONSUMER_KEY'], \
+                    config['DEFAULT']['CONSUMER_SECRET'], \
+                    config['DEFAULT']['OAUTH_TOKEN'], \
+                    config['DEFAULT']['OAUTH_TOKEN_SECRET'] )
 
 date  = time.gmtime(os.path.getmtime('./screenie.png'))
 post = {
@@ -42,7 +41,7 @@ post = {
 }
 
 try:
-    response = api.createPhotoPost(config_craigshot.BLOG,post)
+    response = api.createPhotoPost( config['DEFAULT']['BLOG'], post)
     if 'id' in response:
         print response['id']
         os.remove('./screenie.png')
