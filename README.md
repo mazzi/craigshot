@@ -27,3 +27,13 @@ Where:
 - `CONSUMER` values can be filled in using http://www.tumblr.com/oauth/apps
 - `OAUTH` values can be filled in using https://gist.github.com/velocityzen/1242662
 
+## Requeriments ##
+
+Several...
+
+```
+sudo apt-get install python-pip xvfb xserver-xephyr
+sudo pip install selenium
+```
+
+Any other dependency can be installed using `sudo pip install <<package>>`
