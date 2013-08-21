@@ -28,7 +28,7 @@ browser.quit()
 display.stop()
 
 print "Done!"
-print "Now posting to craigshot.tumblr.com ..."
+print "Now posting to %s ..." % config_craigshot.BLOG
 
 api = TumblrAPIv2( config_craigshot.CONSUMER_KEY, config_craigshot.CONSUMER_SECRET, config_craigshot.OAUTH_TOKEN, config_craigshot.OAUTH_TOKEN_SECRET)
 
