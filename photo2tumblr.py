@@ -52,7 +52,7 @@ class TumblrAPIv2:
         try:
             respdata = urllib2.urlopen(request).read()
         except urllib2.HTTPError, ex:
-            return 'Received error code: ', ex.code
+            return 'Received error : %s ( code: %s )' % (ex.msg, ex.code)
 
         return self.parse_response(respdata)
         
