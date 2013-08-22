@@ -9,7 +9,6 @@ Small python script to take a screenshot of a webpage and post it to tumblr.
 ```
 
 No validation of url at the moment!
-The size of the screenshot is 800x600 (nasty hardcode).
 The script creates a file called `screenie.png` that is being deleted once uploaded.
 
 ## Configuration ##
@@ -19,6 +18,8 @@ You need to create the file `config.ini` (a copy of config_sample.ini)
 Where:
 - `CONSUMER` values can be filled in using http://www.tumblr.com/oauth/apps
 - `OAUTH` values can be filled in using https://gist.github.com/velocityzen/1242662
+
+Don't use quotes for the values.
 
 ## Requeriments ##
 
