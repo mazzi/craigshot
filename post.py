@@ -37,8 +37,6 @@ def post ( config ):
     }
 
     try:
-        print post
-        print config['DEFAULT']['BLOG']
         response = api.createPhotoPost( config['DEFAULT']['BLOG'], post)
         if 'id' in response:
             print response['id']
