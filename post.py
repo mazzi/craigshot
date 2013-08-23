@@ -65,4 +65,7 @@ def main( url ):
 
 
 if __name__ == "__main__":
-    main( sys.argv[1] )
+    if len (sys.argv) > 1 :
+        main( sys.argv[1] )
+    else:
+        print "Usage: post.py <<url_to_fetch>>\n"
